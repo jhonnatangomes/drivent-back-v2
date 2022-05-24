@@ -1,6 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity("sessions")
+@Entity('sessions')
 export default class Session extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;

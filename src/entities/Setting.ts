@@ -1,6 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity("settings")
+@Entity('settings')
 export default class Setting extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -18,11 +18,11 @@ export default class Setting extends BaseEntity {
       settings.find((s) => s.name === name).value;
 
     return {
-      startDate: new Date(getValue("start_date")),
-      endDate: new Date(getValue("end_date")),
-      eventTitle: getValue("event_title"),
-      backgroundImage: getValue("background_image"),
-      logoImage: getValue("logo_image"),
+      startDate: new Date(getValue('start_date')),
+      endDate: new Date(getValue('end_date')),
+      eventTitle: getValue('event_title'),
+      backgroundImage: getValue('background_image'),
+      logoImage: getValue('logo_image'),
     };
   }
 }

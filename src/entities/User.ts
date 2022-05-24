@@ -1,8 +1,8 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import bcrypt from "bcrypt";
-import EmailNotAvailableError from "@/errors/EmailNotAvailable";
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import bcrypt from 'bcrypt';
+import EmailNotAvailableError from '@/errors/EmailNotAvailable';
 
-@Entity("users")
+@Entity('users')
 export default class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -13,7 +13,7 @@ export default class User extends BaseEntity {
   @Column()
   password: string;
 
-  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
   static async createNew(email: string, password: string) {
@@ -33,7 +33,7 @@ export default class User extends BaseEntity {
   static async validateDuplicateEmail(email: string) {
     const user = await this.findOne({ email });
 
-    if(user) {
+    if (user) {
       throw new EmailNotAvailableError(email);
     }
   }
@@ -48,4 +48,3 @@ export default class User extends BaseEntity {
     return null;
   }
 }
-

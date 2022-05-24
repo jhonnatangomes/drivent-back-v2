@@ -1,7 +1,14 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm";
-import Enrollment from "./Enrollment";
+import {
+  BaseEntity,
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
+import Enrollment from './Enrollment';
 
-@Entity("addresses")
+@Entity('addresses')
 export default class Address extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;

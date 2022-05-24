@@ -5,6 +5,6 @@ export default class InvalidDataError extends Error {
     super(`Invalid ${name}`);
 
     this.details = details;
-    this.name = "InvalidDataError";
+    this.name = 'InvalidDataError';
   }
 }

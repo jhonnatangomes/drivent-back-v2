@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
-import httpStatus from "http-status";
+import { Request, Response } from 'express';
+import httpStatus from 'http-status';
 
-import * as enrollmentService from "@/services/client/enrollment";
-import EnrollmentData from "@/interfaces/enrollment";
+import * as enrollmentService from '@/services/client/enrollment';
+import EnrollmentData from '@/interfaces/enrollment';
 
 export async function saveEnrollmentInfo(req: Request, res: Response) {
   const enrollmentData = req.body as EnrollmentData;
@@ -12,11 +12,13 @@ export async function saveEnrollmentInfo(req: Request, res: Response) {
 }
 
 export async function getEnrollmentInfos(req: Request, res: Response) {
-  const enrollmentInfo = await enrollmentService.getEnrollmentWithAddress(req.user.id);
+  const enrollmentInfo = await enrollmentService.getEnrollmentWithAddress(
+    req.user.id
+  );
 
-  if(!enrollmentInfo) {
+  if (!enrollmentInfo) {
     return res.sendStatus(httpStatus.NO_CONTENT);
   }
-  
+
   res.send(enrollmentInfo).status(httpStatus.OK);
 }

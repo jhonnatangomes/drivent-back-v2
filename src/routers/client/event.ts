@@ -1,9 +1,9 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import * as controller from "@/controllers/client/event";
+import * as controller from '@/controllers/client/event';
 
 const router = Router();
 
-router.get("/", controller.get);
+router.get('/', controller.get);
 
 export default router;
